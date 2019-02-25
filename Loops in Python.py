@@ -85,4 +85,94 @@ while True:
     if reply == 'stop':
         break   
 #######################################################      
-      
+n = 5
+while n > 0:
+    n -= 1
+    if n == 2:
+        break
+    print(n)
+print('Loop ended.')      
+#######################################################
+
+n = 5
+while n > 0:
+    n -= 1
+    if n == 2:
+        continue
+    print(n)
+print('Loop ended.')
+#######################################################
+
+n = 5
+while n > 0:
+    n -= 1
+    print(n)
+    if n == 2:
+        break
+else:
+    print('Loop done.')
+
+#######################################################
+
+a = ['foo', 'bar', 'baz', 'qux']
+s = 'corge'
+
+i = 0
+while i < len(a):
+    if a[i] == s:
+        # Processing for item found
+        break
+    i += 1
+else:
+    # Processing for item not found
+    print(s, 'not found in list.')
+
+
+#######################################################
+
+# Infinite loop
+
+while True:
+    print('foo')
+
+#######################################################
+# Nested while Loops
+
+if age < 18:
+    if gender == 'M':
+        print('son')
+    else:
+        print('daughter')
+elif age >= 18 and age < 65:
+    if gender == 'M':
+        print('father')
+    else:
+        print('mother')
+else:
+    if gender == 'M':
+        print('grandfather')
+    else:
+        print('grandmother')
+
+#######################################################
+
+a = ['foo', 'bar']
+while len(a):
+    print(a.pop(0))
+    b = ['baz', 'qux']
+    while len(b):
+        print('>', b.pop(0))
+#######################################################
+
+# One-Line while Loops
+n = 5
+while n > 0: n -= 1; print(n)
+	
+#######################################################	
+
+# But you can’t do this:
+
+while n > 0: n -= 1; if True: print('foo')
+		
+#######################################################
+
