@@ -56,3 +56,33 @@ while counter < 3:
     counter = counter + 1
 else:
     print("Inside else")
+#######################################################      
+
+for counter in range(1, 6):
+    print counter
+
+#can also be written like this:
+
+numbers = range(1,6)
+	for count in numbers:
+	    print (count)
+#######################################################
+
+word = "computer"
+   for letter in word:
+      print letter       
+#######################################################
+
+a = 0		
+while a < 10:	
+   a = a + 1	
+   print a
+   
+#######################################################   
+while True:
+    reply = raw_input('Enter text, [tpye "stop" to quit]: ')
+    print reply.lower()
+    if reply == 'stop':
+        break   
+#######################################################      
+      
