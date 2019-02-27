@@ -21,3 +21,11 @@ print mydic.items()[0][0]
 
 ###########################################################
 
+# iterate in dictionary  
+
+for key in d:
+	print key
+
+# It gives us the key values    
+for key in d:
+	print d[key]    
