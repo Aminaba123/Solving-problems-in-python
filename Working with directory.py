@@ -70,10 +70,17 @@ os.listdir('C:\Users')
 [x for x in os.walk('.')]
   
 ######################################################################
+# Find tex files in directory  
+import os
+items = os.listdir(".")
+
+newlist = []
+for names in items:
+    if names.endswith(".txt"):
+        newlist.append(names)
+print newlist  
   
-  
-  
-  
+######################################################################  
   
   
   
