@@ -17,3 +17,39 @@ with open('p2.csv') as csvfile:
 for date_str in x:
     day, month, year = date_str.split('.')
     print(day, month, year)
+
+#################################################################################################    
+import numpy as np
+from sklearn import preprocessing, cross_validation, neighbors, utils
+import pandas as pd
+
+df = pd.read_csv('C:\\Users\\bbartling\\Documents\\Python\\WB             
+Data\\WB_RTU6data.csv', index_col='Date', parse_dates=True)
+
+print(df.head())
+print(df.tail())
+print(df.shape)
+print(df.columns)
+print(df.info())
+print(df.describe())
+
+
+X = np.array(df.drop(['VAV6znt'],1))
+df.dropna(inplace=True)
+
+y = np.array(df['VAV6znt'])
+
+
+accuracies = []
+
+X_train, X_test, y_train, y_test =             
+cross_validation.train_test_split(X,y,test_size=0.50)
+
+clf = neighbors.KNeighborsClassifier(n_neighbors=50)
+clf.fit(X_train, y_train)
+accuracy = clf.score(X_test, y_test)
+
+print(accuracy)
+                 
+#################################################################################################                 
+                 
