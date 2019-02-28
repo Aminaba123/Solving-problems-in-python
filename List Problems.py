@@ -1,3 +1,13 @@
+
+# Python Expression                Results                 Description
+
+len([1, 2, 3])                         3                     Length
+[1, 2, 3] + [4, 5, 6]       	[1, 2, 3, 4, 5, 6]	       Concatenation
+['Hi!'] * 4	             ['Hi!', 'Hi!', 'Hi!', 'Hi!']	    Repetition
+3 in [1, 2, 3]	                     True	                 Membership
+for x in [1, 2, 3]: print x,       	1 2 3	                  Iteration
+
+
 # Difference between append vs. extend list methods in Python?
 # What's the difference between the list methods append() and extend()?
 # append adds an element to a list, and extend concatenates the first list with another list (or another iterable, not necessarily a list.)
