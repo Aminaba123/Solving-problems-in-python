@@ -277,20 +277,46 @@ for item in a:
 
 newList = oldList[:]
 
+##################################################################################
+
+# How to trim a list in Python
+
+# Suppose I have a list with X elements
+
+# [4,76,2,8,6,4,3,7,2,1...]
+
+[1,2,3,4,5,6,7,8][:5]
+[1, 2, 3, 4, 5]
+
+[1,2,3][:5]
+[1, 2, 3]
+
+x = [6,7,8,9,10,11,12]
+x[:5]
+[6, 7, 8, 9, 10]
+
+# To trim a list in place without creating copies of it, use del:
+
+t = [1, 2, 3, 4, 5]
+# delete elements starting from index 4 to the end
+del t[4:]
+
+t
+[1, 2, 3, 4]
+
+del t[5:]
+
+t
+[1, 2, 3, 4]
 
 
+range(10)[3::2] => [3, 5, 7, 9]
 
+test[3:] = [3, 4, 5, 6, 7, 8, 9]
+test[:3] = [0, 1, 2]
 
+print(mylist[len(mylist) - 1])
 
-
-
-
-
-
-
-
-
-
-
+##################################################################################
 
 
