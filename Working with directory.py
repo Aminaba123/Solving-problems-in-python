@@ -93,10 +93,23 @@ import os
 os.listdir('.')  # gives all files in this directory
 
 ######################################################################
+def num_suffix(n):
+    '''
+    Returns the suffix for any given int
+    '''
+    suf = ('th','st', 'nd', 'rd')
+    n = abs(n) # wise guy
+    tens = int(str(n)[-2:])
+    units = n % 10
+    if tens > 10 and tens < 20:
+        return suf[0] # teens with 'th'
+    elif units <= 3:
+        return suf[units]
+    else:
+        return suf[0] # 'th'  
   
   
-  
-
+######################################################################
 
 
 
