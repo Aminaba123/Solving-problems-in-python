@@ -81,7 +81,18 @@ for names in items:
 print newlist  
   
 ######################################################################  
-  
+
+pwd # gives current directory
+
+cd ... # will change the directory
+
+import os
+os.listdir('C:')  # gives all files in this drive
+
+import os
+os.listdir('.')  # gives all files in this directory
+
+######################################################################
   
   
   
