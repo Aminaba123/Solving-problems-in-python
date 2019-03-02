@@ -191,7 +191,104 @@ for size in [1, 10, 100]:
 		sample_means.append(sample_mean)
 	print('Samples=%d, Estimated Mean: %.3f' % (size, mean(sample_means)))
 
-#######################################################
+#####################################################################################
+
+for c in citynames:
+    
+    dat = crimedict[c]
+   
+    crimenums_city = list(dat.values())
+    crime_city = 0
+#####################################################################################
+
+
+n = 5
+while n > 0:
+  print("Hello World!!")
+
+#####################################################################################
+
+i = 1
+while i < 6:
+    print(i)
+    i += 1
+#####################################################################################
+
+i = 1
+while i < 6:
+    print(i)
+    if i == 3:
+        break
+    i += 1
+
+#####################################################################################
+
+i = 0
+while i < 6:
+    i += 1 
+    if i == 3:
+        continue
+	print(i)
+
+#####################################################################################
+
+import random
+
+n = 10
+ten = 10
+for i in range(1, n):
+    ten = ten * 10
+
+#####################################################################################
+
+ while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k]=lefthalf[i]
+                i=i+1
+            else:
+                alist[k]=righthalf[j]
+                j=j+1
+            k=k+1
+
+        while i < len(lefthalf):
+            alist[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+
+        while j < len(righthalf):
+            alist[k]=righthalf[j]
+            j=j+1
+            k=k+1
+    print("Merging ",alist)
+
+#####################################################################################
+
+def fibonacci():
+    myList = []
+    cont = 0
+    num = int(input("Please, insert a number: "))
+
+    if num == 1:
+        myList.append(1)
+    elif num >= 2:
+        myList.extend((1,1))
+        while (num-2 != cont):
+            myList.append(myList[-1]+myList[-2])
+            cont+=1
+    elif num <= 0:
+        print("Error, number should start above 1")
+
+    print(myList)
+
+fibonacci()
+
+
+
+
+
+
+
+
 
 
 
