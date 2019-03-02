@@ -31,3 +31,38 @@ def list_test2 (L):
         
 ###############################################################
 
+def fibonacci():
+    myList = []
+    cont = 0
+    num = int(input("Please, insert a number: "))
+
+    if num == 1:
+        myList.append(1)
+    elif num >= 2:
+        myList.extend((1,1))
+        while (num-2 != cont):
+            myList.append(myList[-1]+myList[-2])
+            cont+=1
+    elif num <= 0:
+        print("Error, number should start above 1")
+
+    print(myList)
+
+fibonacci()
+
+###############################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
