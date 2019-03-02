@@ -311,13 +311,38 @@ for i in range(5):
 
 #####################################################################################
 
+    monkey = 5
+    peach5th = 1
+    peach = 1
+
+    while monkey > 1:
+        total = peach * 5 + 1
+        if total % 4 == 0:
+            monkey -= 1
+            peach = total / 4
+        else:
+            # 从第5只猴开始算
+            peach5th += 1
+            peach = peach5th
+            monkey = 5
+
+    print("沙滩上最少有：%d个桃子。" % (int(peach * 5 + 1)))
 
 
+#####################################################################################
 
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(matrix)
 
+print(matrix[1])
 
+col2 = [x[1] for x in matrix]
+print(col2)
 
+col2even = [x[1] for x in matrix if x[1] % 2 == 0]
+print(col2even)
 
+#####################################################################################
 
 
 
