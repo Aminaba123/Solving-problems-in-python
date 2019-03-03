@@ -90,4 +90,115 @@ def solution1():
 
 ###############################################################
 
+def rotate(self, matrix):
+        """
+        rotate matrix n*n
+        1. flip along the diagonal
+        2. flip along x-axis
+        :param matrix: a list of lists of integers
+        :return: a list of lists of integers
+        """
+        n = len(matrix)
+        for row in range(n):
+            for col in range(n-row):
+                matrix[row][col], matrix[n-1-col][n-1-row] = matrix[n-1-col][n-1-row], matrix[row][col]  # by diagonal
+        for row in range(n/2):
+            for col in range(n):
+                matrix[row][col], matrix[n-1-row][col] = matrix[n-1-row][col], matrix[row][col]  # by x-axis
+
+        return matrix
+
+###############################################################
+
+def sortColors(self, A):
+        """
+        Algorithm: pivoting. Similar concept as QuickSort
+        constant space
+        [W, R, B]
+        :param A: a list of integers
+        :return: nothing, sort in place
+        """
+        RED, WHITE, BLUE = 0, 1, 2
+        red_end_ptr = -1
+        blue_start_ptr= len(A)
+
+        i = 0
+        while i<blue_start_ptr:
+            if A[i]==WHITE: # pivot set
+                i += 1
+            elif A[i]==RED:
+                red_end_ptr+=1
+                A[red_end_ptr], A[i] = A[i], A[red_end_ptr]
+                i += 1
+            else:
+                blue_start_ptr -= 1
+                A[blue_start_ptr], A[i] = A[i], A[blue_start_ptr]
+                # no i+=1, since you need to examine A[i] again
+
+###############################################################
+
+# finding square root Function
+
+    def sqrt(self, x):
+        """
+        Newton's method
+        x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \
+        http://en.wikipedia.org/wiki/Newton's_method
+        :param x: Integer
+        :return: Integer
+        """
+        if x==0: return 0  # avoid Division by zero
+        m = x
+        while True:
+            m_before = m
+            m = m - float(m*m-x)/(2*m)
+            if abs(m-m_before)<1e-7: break
+
+        return int(m)
+
+###############################################################
+# search word
+
+    def exist(self, board, word):
+        """
+        dfs
+        :param board: a list of lists of 1 length string
+        :param word: a string
+        :return: boolean
+        """
+        if not board:
+            return
+        # unpack
+        # board = [item[0] for item in board]
+
+        m = len(board)
+        n = len(board[0])
+        visited = [[False for _ in xrange(n)] for _ in xrange(m)]  # avoid loop
+        for i in xrange(m):
+            for j in xrange(n):
+                if board[i][j]==word[0]:
+                    visited[i][j] = True
+                    if self.search(board, i, j, word[1:], visited):
+                        return True
+                    visited[i][j] = False
+        return False
+
+    def search(self, board, pre_row, pre_col, word, visited):
+        if not word:
+            return True
+        # searching for word[0]
+        m = len(board)
+        n = len(board[0])
+        next_positions = [(pre_row-1, pre_col), (pre_row+1, pre_col), (pre_row, pre_col-1), (pre_row, pre_col+1)]  # four directions
+        for next_position in next_positions:
+            if 0<=next_position[0]<m and 0<=next_position[1]<n:  # pre-checking
+                if visited[next_position[0]][next_position[1]]==False and board[next_position[0]][next_position[1]]==word[0]:
+                    visited[next_position[0]][next_position[1]] = True
+                    if self.search(board, next_position[0], next_position[1], word[1:], visited):
+                        return True
+                    visited[next_position[0]][next_position[1]] = False  # restore
+        return False
+
+###############################################################
+
 
