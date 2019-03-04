@@ -88,8 +88,17 @@ for i,j in result.items():
     with open(file_path, 'wb') as fp:
         writer = csv.writer(fp, delimiter=',')
         writer.writerows(j)
-#################################################################################################                 
+
                  
+#################################################################################################                 
+import datetime
+
+for row in LocalDate: 
+    date = datetime.datetime.strptime (row,"%m/%d/%Y") 
+    if date < datetime.datetime.strptime ( "01/08/2018", "%m/%d/%Y"):
+        print row , date
+    
+ #################################################################################################                
                  
                  
                  
