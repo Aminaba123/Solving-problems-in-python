@@ -57,7 +57,10 @@ for i in (range(len(data_csv_split)-9000)):
       print i
 
 #################################################################################################
-                 
+ 
+df = pd.read_csv('C:\\Users\\bbartling\\Documents\\Python\\WB             
+Data\\WB_RTU6data.csv', index_col='Date', parse_dates=True)    ======type( )===  pandas.core.frame.DataFrame      
+                     
                  
                  
                  
