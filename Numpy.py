@@ -32,3 +32,7 @@ y=numpy.array(x)
 x = [[1, 2], [1, 2, 3], [1]]
 y = numpy.hstack(x)
 
+##################################################################################
+
+# To get a NumPy array, you should use the values attribute:
+
