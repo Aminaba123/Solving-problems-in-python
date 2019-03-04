@@ -65,9 +65,30 @@ Data\\WB_RTU6data.csv', index_col='Date', parse_dates=True)    ======type( )=== 
 data=data.T.to_dict().values()                 
                  
 #################################################################################################                 
+ 
+# this code read dates from a csv file and then separate and save dates in diffrent CSV files
+src_path = "/home/vivek/Desktop/Work/stack/"
+main_file = "/home/vivek/Desktop/Work/stack/main.csv"
+import csv
+import collections
+import pprint
 
+with open(main_file, "rb") as fp:
+    root = csv.reader(fp, delimiter=',')
+    result = collections.defaultdict(list)
+    for row in root:
+        year = row[0].split("-")[0]
+        result[year].append(row)
 
-                 
+print "Result:-"        
+pprint.pprint(result)
+
+for i,j in result.items():
+    file_path = "%s%s.csv"%(src_path, i)
+    with open(file_path, 'wb') as fp:
+        writer = csv.writer(fp, delimiter=',')
+        writer.writerows(j)
+#################################################################################################                 
                  
                  
                  
