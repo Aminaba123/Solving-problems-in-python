@@ -345,18 +345,66 @@ def chunks(l, n):
 list(chunks(first_names, 5))
 
 ####################################################################################
+# Basic List Operations         
+
+Python Expression              Results                       Description
+
+len([1, 2, 3])                   3                             Length
+[1, 2, 3] + [4, 5, 6]      [1, 2, 3, 4, 5, 6]                Concatenation
+ ['Hi!'] * 4           ['Hi!', 'Hi!', 'Hi!', 'Hi!']           Repetition
+3 in [1, 2, 3]	                 True                          Membership
+for x in [1, 2, 3]: print x,	   1 2 3                       Iteration
         
+############################# Indexing, Slicing, and Matrixes ##########################       
+
+L = ['spam', 'Spam', 'SPAM!']       
         
+ Python Expression             Results                  Description
+ L[2]                           SPAM!                  Offsets start at zero
+ L[-2]                           Spam                Negative: count from the right
+ L[1:]                        ['Spam', 'SPAM!']       Slicing fetches sections
+
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+########  Built-in List Functions & Methods  ########
+# cmp(list1, list2)        
+# Compares elements of both lists.       
+
+# len(list)
+# Gives the total length of the list.
+
+# max(list)
+# Returns item from the list with max value.
+
+# list(seq)
+# Converts a tuple into list.
+
+# list.append
+# Appends object obj to list
+
+# list.count
+# Returns count of how many times obj occurs in list
+
+# list.extend
+
+# list.index
+
+# list.insert
+
+# list.pop
+
+# Removes and returns last object or obj from list
+
+# list.remove
+# Removes object obj from list
+
+# list.reverse()
+# Reverses objects of list in place
+
+# list.sort
+# Sorts objects of list, use compare func if given
+
+############################################################################################################
+
+
+
+
