@@ -369,9 +369,13 @@ def data_to_plotly(x):
 
 #####################################################################################
 
+import csv
+reader = csv.reader(open('CamCloseM6 4V300E10.csv'))
 
+result = {row[0]:row[1:] for row in reader if row and row[0]}
+print result
 
-
+#####################################################################################
 
 
 
