@@ -215,13 +215,44 @@ def f(x):
 
 ###############################################################
 
+#  skip the first line of the file and I'm not sure if I'm returning it as a dictionary
+#  Reading csv file and returning as dictionary
 
+# First thing we do is delete the first line of the list.
 
+# Then we run a function to do exactly as you say, make a dictionary with list of tuples as values.
 
+# You can keep the function you have and run this operation on the lines variable.
 
+# Alright run the following code and you should be good
 
+def convertLines(lines):
+    head = lines[0]
+    del lines[0]
+    infoDict = {}
+    for line in lines: #Going through everything but the first line
+        infoDict[line.split(",")[0]] = [tuple(line.split(",")[1:])]
+    return infoDict
 
+def read_file(filename):
+    thefile = open(filename, "r")
+    lines = []
+    for i in thefile:
+        lines.append(i)
+    thefile.close()
+    return lines
 
+mydict = convertLines(read_file(filename))
+print(mydict)       
+
+###############################################################
+
+# Codes for linear regresion 
+
+def predict_sales(radio, weight, bias):
+    return weight*radio + bias
+
+# What we need is a cost function so we can start optimizing our weights
 
 
 
