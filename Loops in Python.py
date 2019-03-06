@@ -377,8 +377,13 @@ print result
 
 #####################################################################################
 
+import csv
+reader = csv.reader(open('test.csv'))
 
+result = {row[0]:[i for i in row[1:] if i] for row in reader if row and row[0]}
+print result
 
+#####################################################################################
 
 
 
