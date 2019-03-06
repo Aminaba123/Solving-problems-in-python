@@ -29,3 +29,26 @@ for key in d:
 # It gives us the key values    
 for key in d:
 	print d[key]    
+
+###########################################################	
+# If you want to just access first key of the first item in sampleDict.values(), this may be useful:
+
+print sampleDict.values()[0].keys()[0]	
+
+###########################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
