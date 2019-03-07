@@ -254,13 +254,42 @@ def predict_sales(radio, weight, bias):
 
 # What we need is a cost function so we can start optimizing our weights
 
+###############################################################
+
+x = 2
+def f(a):
+    x = a * a
+    return x
+
+y = f(3)
+print(x,y)
+
+###############################################################
+
+# What will be the output of the following program?
+
+x = 1
+def f():
+    y = x
+    x = 2
+    return x + y
 
 
+print(x)
+print(f())
+print(x)
 
+UnboundLocalError: local variable 'x' referenced before assignment
 
+###############################################################
 
+# Write a function count_digits to find number of digits in the given number.
 
+def count_digits(n):
+    return len(str(n))
 
+print(count_digits(345))
 
+###############################################################
 
 
