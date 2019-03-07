@@ -385,8 +385,25 @@ print result
 
 #####################################################################################
 
+number_str = input('Find the square root of integer:')
+number_int = int(number_str)
+guess_str = input ('initial guess:')
+guess_float = float(guess_str)
+tolerance_float = float(input("what tolerance:"))
 
+original_guess_float = guess_float
+count_int = 0
+previous_float = 0
 
+while abs(previous_float - guess_float) > tolerance_float:
+	previous_float = guess_float
+	quotient_float = number_int /guess_float
+	guess_float = (quotient_float + guess_float)/2
+	count_int = count_int +1 
+print (number_int, guess_float)
+print (count_int, tolerance_float)
+print (original_guess_float )
 
+#####################################################################################
 
 
