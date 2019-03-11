@@ -406,4 +406,42 @@ print (original_guess_float )
 
 #####################################################################################
 
+	result = []
+	num.sort()
+	length = len(num)
 
+        h = 0
+        while h<length-3:
+            i = h+1
+            while i<length-2:
+                j = i+1
+                k = length-1
+                while j<k:
+                    lst = [num[h], num[i], num[j], num[k]]
+                    summation = sum(lst)
+                    if summation==target:
+                        result.append(lst)
+                        k -= 1
+                        j += 1
+                        # remove duplicate
+                        while j<k and num[j]==num[j-1]:
+                            j += 1
+                        while j<k and num[k]==num[k+1]:
+                            k -= 1
+                    elif summation>target:
+                        k -= 1
+                    else:
+                        j += 1
+    
+                i += 1
+                # Jump, remove duplicate
+                while i<length-2 and num[i]==num[i-1]:
+                    i += 1
+            h += 1
+            # Jump, remove duplicate
+            while h<length-3 and num[h]==num[h-1]:
+                h += 1
+
+        return result
+
+#####################################################################################
