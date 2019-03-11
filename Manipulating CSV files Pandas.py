@@ -344,7 +344,7 @@ with open('employee_birthday.txt') as csv_file:
     print(f'Processed {line_count} lines.')
                   
 #####################################################################################                  
-                  
+# Read CSV with dictionary                   
 import csv
 
 with open('employee_birthday.txt', mode='r') as csv_file:
