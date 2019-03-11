@@ -291,5 +291,16 @@ def count_digits(n):
 print(count_digits(345))
 
 ###############################################################
+def squareRoot(a):
+    x = 2
+    while True:
+        print(x)
+        y = (x + a/x) / 2
+        if y == x:
+            break
+        x = y 
+    return y
+###############################################################
+
 
 
