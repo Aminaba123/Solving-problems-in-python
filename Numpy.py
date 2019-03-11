@@ -36,3 +36,17 @@ y = numpy.hstack(x)
 
 # To get a NumPy array, you should use the values attribute:
 
+
+
+##################################################################################
+# Stack to array together 
+
+x = np.random.normal(0, 1, 500)
+y = np.random.normal(0, 1, 500)
+X = np.vstack((x, y)).T
+
+##################################################################################
+
+
+
+
