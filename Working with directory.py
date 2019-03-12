@@ -7,6 +7,12 @@ pwd
 
 cd C:...
 
+######################################################################    
+# changing directory    
+import os
+
+os.chdir("C:\\Users\\abbasnam\\Downloads\\Files")    
+    
 ######################################################################
 
 # Current directory 
