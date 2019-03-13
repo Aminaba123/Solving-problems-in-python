@@ -360,9 +360,11 @@ with open('employee_birthday.txt', mode='r') as csv_file:
                   
 #####################################################################################
                   
+ with open('CamCloseM6 4V300E10.csv') as csv_file:
+    header = [h.strip() for h in csv_file.next().split(',')]
+    reader = csv.DictReader(csv_file, fieldnames=header)                 
                   
-                  
-                  
+ #####################################################################################                 
                   
                   
                   
