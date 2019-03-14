@@ -314,10 +314,33 @@ print(result_str) # Line 3
 
 ###############################################################
 
+def addDateColumn():
+"""Adds time to the daily rainfall data. Reads the csv as chunks of 100k 
+   rows at a time and outputs them, appending as needed, to a single csv. 
+   Uses the column of the raster names to get the date.
+"""
+    df = pd.read_csv(pathlist[1]+"CHIRPS_tanz.csv", iterator=True, 
+                     chunksize=100000) #read csv file as 100k chunks
+
+    '''Do some stuff'''
+
+    count = 1 #for indexing item in time list 
+    for chunk in df: #for each 100k rows
+        newtime = [] #empty list to append repeating times for different rows
+        toiterate = chunk[chunk.columns[2]] #ID of raster nums to base time
+        while count <= toiterate.max():
+            for i in toiterate: 
+                if i ==count:
+                    newtime.append(newyears[count])
+            count+=1
+        print "Finished", str(chunknum), "chunks"
+        chunk["time"] = newtime #create new column in dataframe based on time
+        outname = "CHIRPS_tanz_time2.csv"
+        #append each output to same csv, using no header
+        chunk.to_csv(pathlist[2]+outname, mode='a', header=None, index=None)
 
 
-
-
+###############################################################
 
 
 
