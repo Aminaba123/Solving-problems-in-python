@@ -99,9 +99,26 @@ list_of_dicts.sort(key=operator.itemgetter('age'))
 
 ##########################################################
 
+import csv
 
+# open the file in universal line ending mode 
+with open('test.csv', 'rU') as infile:
+  # read the file as a dictionary for each row ({header : value})
+  reader = csv.DictReader(infile)
+  data = {}
+  for row in reader:
+    for header, value in row.items():
+      try:
+        data[header].append(value)
+      except KeyError:
+        data[header] = [value]
 
+# extract the variables you want
+names = data['name']
+latitude = data['latitude']
+longitude = data['longitude']
 
+##########################################################
 
 
 
