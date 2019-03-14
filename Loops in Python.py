@@ -457,6 +457,19 @@ for i in range(len(l)):
 [s.lower() for s in ['PythOn', 'iS', 'cOoL'] if s[0] < s[-1]]
 
 #####################################################################################	
+import csv
+
+def read_file(filename, col_list):
+    with open(filename, 'r') as f:
+        reader = csv.DictReader(f)
+
+        final_dict = { col_name: [] for col_name in col_list }
+
+        for row in reader:
+            for col_name in col_list:
+                final_dict[col_name].append(row[col_name])
+
+        print final_dict
 
 
 
