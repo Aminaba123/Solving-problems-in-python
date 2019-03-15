@@ -166,6 +166,89 @@ import glob
 glob.glob('./*py')
 
 ######################################################################
+# Find all files in a directory with extension .txt in Python
+
+import glob, os
+os.chdir("/mydir")
+for file in glob.glob("*.txt"):
+    print(file)
+    
+import os
+for file in os.listdir("/mydir"):
+    if file.endswith(".txt"):
+        print(os.path.join("/mydir", file))    
+
+######################################################################
+
+import os
+>>> path = '/usr/share/cups/charmaps'
+>>> text_files = [f for f in os.listdir(path) if f.endswith('.txt')]
+>>> text_files
+
+######################################################################
+
+import os
+import sys
+walk_dir = sys.argv[-1]
+print walk_dir
+
+#Make sure you understand the three return values of os.walk:
+
+#for root, subdirs, files in os.walk(rootdir):
+#has the following meaning:
+
+#root: Current path which is "walked through"
+#subdirs: Files in root of type directory
+#files: Files in root (not in subdirs) of type other than directory
+#And please use os.path.join instead of concatenating with a slash!
+#Your problem is filePath = rootdir + '/' + file - you must concatenate the currently "walked" folder instead of the topmost folder.
+#So that must be filePath = os.path.join(root, file). BTW "file" is a builtin, so you don't normally use it as variable name.
+
+#Another problem are your loops, which should be like this, for example:
+
+import os
+import sys
+
+walk_dir = sys.argv[1]
+
+print('walk_dir = ' + walk_dir)
+
+# If your current working directory may change during script execution, it's recommended to
+# immediately convert program arguments to an absolute path. Then the variable root below will
+# be an absolute path as well. Example:
+# walk_dir = os.path.abspath(walk_dir)
+print('walk_dir (absolute) = ' + os.path.abspath(walk_dir))
+
+for root, subdirs, files in os.walk(walk_dir):
+    print('--\nroot = ' + root)
+    list_file_path = os.path.join(root, 'my-directory-list.txt')
+    print('list_file_path = ' + list_file_path)
+
+    with open(list_file_path, 'wb') as list_file:
+        for subdir in subdirs:
+            print('\t- subdirectory ' + subdir)
+
+        for filename in files:
+            file_path = os.path.join(root, filename)
+
+            print('\t- file %s (full path: %s)' % (filename, file_path))
+
+            with open(file_path, 'rb') as f:
+                f_content = f.read()
+                list_file.write(('The file %s contains:\n' % filename).encode('utf-8'))
+                list_file.write(f_content)
+                list_file.write(b'\n')
+
+
+######################################################################
+
+
+
+
+
+
+
+
 
 
 
