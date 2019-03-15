@@ -130,23 +130,42 @@ glob.glob('./*.csv')
 # ['.\\crop_data.csv']
 ######################################################################
 
+def set_directory():
+    print ('Enter the directory to be set: ')
+    data = input()
+    chdir(data + ':\\')
+    print ('Enter name for the folder: ')
+    data = input()
+    create_directory(data)
+    return True
 
+######################################################################
 
+import os
 
+def listdir_fullpath(d):
+    return [os.path.join(d, f) for f in os.listdir(d)]
 
+######################################################################
 
+from os.path import join, getsize
+for root, dirs, files in os.walk('C:'):
+    print(root, "consumes")
 
+######################################################################
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+root = 'C:\\Users\\An47880'
 
+for path, subdirs, files in os.walk(root):
+    for name in files:
+        print os.path.join(path, name)
 
+######################################################################
 
+import glob
+glob.glob('./*py')
 
-
-
-
-
-
-
-
+######################################################################
 
 
 
