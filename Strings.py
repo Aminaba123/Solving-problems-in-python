@@ -23,3 +23,10 @@ datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 
 #######################################################################################
 
+"{} is {} years old".format("Bill",25)
+
+import math
+"{} is nice but {} is divine!".format(1, math.pi)
+'1 is nice but 3.141592653589793 is divine!'
+
+#######################################################################################
