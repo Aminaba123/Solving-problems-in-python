@@ -179,6 +179,42 @@ A B
 Forward: Madam, I'm Adam
 #######################################################################################    
 
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.use('pgf')
+from matplotlib import rc
+
+rc('text',usetex=True)
+rc('text.latex', preamble=r'\usepackage{color}')
+
+a = "all unicorns poop rainbows ! ! !".split()
+c = ['red', 'orange', 'brown', 'green', 'blue', 'purple', 'black']
+st = ''
+for i in range(len(a)):
+    st = st + r'\textcolor{'+c[i]+'}{'+a[i]+'}'
+plt.text(0.5,0.5,st)
+plt.show()
+
+#######################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
