@@ -471,9 +471,33 @@ def read_file(filename, col_list):
 
         print final_dict
 
+#############################################################################################
 
+# Anagram t e s t
+def are_anagrams(word1, word2):
+""" Return True , i f words are anagrams . """
+#2. Sort the characters of the words .
+	word1 sorted = sorted(word1) # sorted returns a sorted l i s t
+	word2 sorted = sorted(word2)
+#3. Check that the sor t ed words are ident i cal .
+	return word1 sorted == word2 sorted
+print("Anagram Test")
+# 1. Input two words , checking for e r r o r s now
+valid_input_bool = False
+while not valid input bool:
+    try:
+        two_words = input("Enter two space separated words: ")
+        word1,word2 = two words.split() # s p l i t the input s t r i n g into a l i s t of words
 
+	valid_input_bool = True
+    except ValueError:
+        print("Bad Input")
+if are anagrams(word1, word2): # function returned True or Fal se
+      print("The words {} and {} are anagrams.".format(word1, word2))
+else:
+      print("The words {} and {} are not anagrams.".format(word1, word2))
 
+#############################################################################################
 
 
 
