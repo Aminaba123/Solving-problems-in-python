@@ -120,9 +120,13 @@ longitude = data['longitude']
 
 ##########################################################
 
+values = [] #in same order as traversing keys
+keys = [] #also needed to preserve order
+for key in myDictionary.keys():
+  keys.append(key)
+  values.append(myDictionary[key])
 
-
-
+##########################################################
 
 
 
