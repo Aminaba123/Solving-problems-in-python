@@ -328,10 +328,23 @@ def read_file(filename, col_list):
 
         print final_dict
 
+###############################################################
+	
+def partition(vector, fold, k):
+    size = vector.shape[0]
+    start = (size/k)*fold
+    end = (size/k)*(fold+1)
+    validation = vector[start:end]
+    if str(type(vector)) == "<class 'scipy.sparse.csr.csr_matrix'>":
+        indices = range(start, end)
+        mask = np.ones(vector.shape[0], dtype=bool)
+        mask[indices] = False
+        training = vector[mask]
+    elif str(type(vector)) == "<type 'numpy.ndarray'>":
+        training = np.concatenate((vector[:start], vector[end:]))
+    return training, validation
 
-
-
-
+###############################################################
 
 
 
