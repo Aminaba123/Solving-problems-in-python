@@ -346,6 +346,65 @@ def partition(vector, fold, k):
 
 ###############################################################
 
+def Sigmoid(z):
+    return 1/(1 + np.exp(-z))
+
+def Hypothesis(theta, x):   
+    return Sigmoid(x @ theta)
+
+def Cost_Function(X,Y,theta,m):
+    hi = Hypothesis(theta, x)
+    _y = Y.reshape(-1, 1)
+    J = 1/float(m) * np.sum(-_y * np.log(hi) - (1-_y) * np.log(1-hi))
+    return J
+
+def Cost_Function_Regularisation(X,Y,theta,m,alpha):
+    hi = Hypothesis(theta,X)
+    _y = Y.reshape(-1, 1)
+    J = alpha/float(m) * X.T @ (hi - _y)
+    return J
+
+def Cost_Function_Regularisation(X,Y,theta,m,alpha):
+    hi = Hypothesis(theta,X)
+    _y = Y.reshape(-1, 1)
+    J = alpha/float(m) * X.T @ (hi - _y)
+    return J
+
+def Gradient_Descent(X,Y,theta,m,alpha):
+    new_theta = theta - Cost_Function_Regularisation(X,Y,theta,m,alpha)
+    return new_theta
+
+def Accuracy(theta):
+    correct = 0
+    length = len(X_test)
+    prediction = (Hypothesis(theta, X_test) > 0.5)
+    _y = Y_test.reshape(-1, 1)
+    correct = prediction == _y
+    my_accuracy = (np.sum(correct) / length)*100
+    print ('LR Accuracy CV: ', my_accuracy, "%")
+
+
+def Logistic_Regression(X,Y,alpha,theta,num_iters):
+    m = len(Y)
+    for x in range(num_iters):
+        new_theta = Gradient_Descent(X,Y,theta,m,alpha)
+        theta = new_theta
+        if x % 100 == 0:
+            print #('theta: ', theta)    
+            print #('cost: ', Cost_Function(X,Y,theta,m))
+    Accuracy(theta)
+
+###############################################################
+
+
+
+
+
+
+
+
+
+
 
 
 
