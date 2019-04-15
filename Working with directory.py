@@ -260,8 +260,40 @@ print "Directory changed successfully %s" % retval
 
 ######################################################################
 
+import numpy as np
+import _pickle as cPickle
+from PIL import Image
+import sys,os
 
+pixels = []
+labels = []
+traindata = []
+i = 0
 
+directory = 'C:\\Users\\abc\\Desktop\\Testing\\images'
+for root, dirs, files in os.walk(directory):
+    for file in files:
+        floc = file
+        im = Image.open(str(directory) + '\\' + floc)
+        pix = np.array(im.getdata())
+        pixels.append(pix)
+        labels.append(1)
+        pixels = np.array(pixels)
+        labels = np.array(labels)
+        traindata.append(pixels)
+        traindata.append(labels)
+        traindata = np.array([traindata[i][i],traindata[1]], dtype=object)
+        i = i + 1
+
+# do the same for validation and test data
+# put all data and labels into 'data' array
+cPickle.dump(traindata,open('data.pickle','wb'))
+
+FILE = open("data.pickle", 'rb')
+content = cPickle.load(FILE)
+print (content)
+
+######################################################################
 
 
 
