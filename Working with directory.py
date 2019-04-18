@@ -341,6 +341,63 @@ a = glob.glob('CamCloseM6 4V300E10.csv')
 
 ######################################################################
 
+import os
+
+file_path = "/my/directory/filename.txt"
+directory = os.path.dirname(file_path)
+
+try:
+    os.stat(directory)
+except:
+    os.mkdir(directory)       
+
+f = file(filename)
+
+######################################################################
+
+import os
+import errno
+
+def make_sure_path_exists(path):
+    try:
+        os.makedirs(path)
+    except OSError as exception:
+        if exception.errno != errno.EEXIST:
+            raise
+
+######################################################################
+
+import os
+try: 
+    os.makedirs(path)
+except OSError:
+    if not os.path.isdir(path):
+        raise
+        
+######################################################################      
+        
+import os
+if not os.path.exists(directory):
+    os.makedirs(directory)        
+        
+######################################################################    
+
+import os
+
+file_path = "/my/directory/filename.txt"
+directory = os.path.dirname(file_path)
+
+try:
+    os.stat(directory)
+except:
+    os.mkdir(directory)       
+
+f = file(filename)
+
+######################################################################
+
+
+
 
 
 
