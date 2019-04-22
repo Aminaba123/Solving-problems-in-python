@@ -395,11 +395,24 @@ def Logistic_Regression(X,Y,alpha,theta,num_iters):
     Accuracy(theta)
 
 ###############################################################
+def maps(list):
+    list_integer = []
+    for i in list:
+        list_integer.append(len(i))
+    return list_integer
 
+###############################################################
 
+def max_in_list(list):
+    max = 0
+    for i in range(len(list)-1):
+        if list[i] > list [i+1] and list [i] > max:
+            max = list[i]
+        elif list[i+1] > max:
+            max = list [i+1]
+    return max
 
-
-
+###############################################################
 
 
 
