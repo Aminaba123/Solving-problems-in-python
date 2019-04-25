@@ -474,7 +474,12 @@ with open('example.csv') as csvfile:
     print('The date of',whatColor,'is:',theDate)
               
 ##################################################################################
-              
+df = pd.read_csv('estimated_pred.csv')
+
+for i in range(1,100):
+    df['X_t'+str(i)] = df['X'].shift(i)
+
+###############################################################              
               
               
               
