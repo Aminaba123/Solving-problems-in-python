@@ -420,6 +420,39 @@ def rmse(predictions, targets):
 
 ###############################################################
 
+def text_with_circle(text_obj, axis, color, border=1.5):
+    # Get the box containing the text
+    box1 = text_obj.get_window_extent()
+    # It turned out that what you get from the box is 
+    # in screen pixels, so we need to transform them 
+    # to "data"-coordinates.  This is done with the 
+    # transformer-function below
+    transformer = axis.transData.inverted().transform
+    # Now transform the corner coordinates of the box
+    # to data-coordinates
+    [x0, y0] = transformer([box1.x0, box1.y0])
+    [x1, y1] = transformer([box1.x1, box1.y1])
+    # Find the x and y center coordinate
+    x_center = (x0+x1)/2.
+    y_center = (y0+y1)/2.
+    # Find the radius, add some extra to make a nice border around it
+    r = np.max([(x1-x0)/2., (y1-y0)/2.])*border
+    # Plot the a circle at the center of the text, with radius r.
+    circle = Circle((x_center, y_center), r, color=color)
+    # Add the circle to the axis.
+    # Redraw the canvas.
+    return circle 
+
+###############################################################
+
+
+
+
+
+
+
+
+
 
 
 
