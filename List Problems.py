@@ -405,6 +405,15 @@ L = ['spam', 'Spam', 'SPAM!']
 
 ############################################################################################################
 
+xyz_list = frag_str.split()
+nums = []
+coords = []
+for i in range(int(len(xyz_list)/4)):
+    nums.append(xyz_list[i*4])
+    coords.append(xyz_list[i*4+1:(i+1)*4])
+nums = np.concatenate(nums)
+coords = np.concatenate(coords)
 
+############################################################################################################
 
 
