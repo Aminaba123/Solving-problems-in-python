@@ -413,10 +413,12 @@ def max_in_list(list):
     return max
 
 ###############################################################
+####   RMSE
 
+def rmse(predictions, targets):
+    return np.sqrt(((predictions - targets) ** 2).mean())
 
-
-
+###############################################################
 
 
 
