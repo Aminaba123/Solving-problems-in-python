@@ -1,0 +1,4 @@
+what is the scope varibale ?
+
+How can we define our library I mean how can we use import * , Import numpy as np 
+
