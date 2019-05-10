@@ -425,12 +425,25 @@ for i in L:
     count += 1
 ############################################################################################################
 
+some_list[start:stop:step]
 
+############################################################################################################
 
+def chunk(iterable, chunk_size):
+    """Generate sequences of `chunk_size` elements from `iterable`."""
+    iterable = iter(iterable)
+    while True:
+        chunk = []
+        try:
+            for _ in range(chunk_size):
+                chunk.append(iterable.next())
+            yield chunk
+        except StopIteration:
+            if chunk:
+                yield chunk
+            break
 
-
-
-
+############################################################################################################
 
 
 
