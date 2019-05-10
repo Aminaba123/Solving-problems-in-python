@@ -396,9 +396,15 @@ f = file(filename)
 
 ######################################################################
 
+for root, dirs, files in os.walk(directory):
+    for file in files:
+        floc = file
+        im = Image.open(str(directory) + '\\' + floc)
+        pix = np.array(im.getdata())
+        pixels.append(pix)
+        labels.append(1)   # append(i)???
 
-
-
+######################################################################
 
 
 
