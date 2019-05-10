@@ -445,9 +445,17 @@ def text_with_circle(text_obj, axis, color, border=1.5):
 
 ###############################################################
 
+# Summation 
 
+def sumation(a):
+    s= []
+    t=0
+    for i in (a):
+        t += i
+        s.append(t)
+    print i, t , s
 
-
+###############################################################
 
 
 
