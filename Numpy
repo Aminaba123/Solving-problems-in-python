@@ -1,0 +1,24 @@
+Why using NumPy
+
+How to install NumPy?
+
+Add array element
+
+Add a column
+
+Append a row
+
+Delete an element
+
+Delete a row
+
+Check if NumPy array is empty
+
+Find the index of a value
+
+NumPy array slicing
+
+Apply a function to all array element
+
+NumPy array length
+
