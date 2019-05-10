@@ -450,9 +450,21 @@ arr[nr:nr+b.shape[0], 1:] = b
 ############################################################################################################
 
 
+import numpy as np
+#Create a numpy array
+np_arr = np.array([1,2,3,4,5])
 
+#change the contents
+index = 0
+while index < np_arr.size:
+    np_arr[index] = 100
+    index += 1
+    
+#Iterate and display
+for item in np_arr:
+    print(item)
 
-
+############################################################################################################
 
 
 
