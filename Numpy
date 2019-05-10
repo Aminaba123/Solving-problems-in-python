@@ -22,3 +22,25 @@ Apply a function to all array element
 
 NumPy array length
 
+Apply a function to all array element
+
+NumPy array slicing
+
+Apply a function to all array element
+
+NumPy array length
+
+Create NumPy array from List
+
+Convert NumPy array to list
+
+NumPy array to CSV
+
+Sort NumPy array
+
+Normalize array
+
+Array Indexing
+
+Append NumPy array to another
+
