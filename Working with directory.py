@@ -441,5 +441,32 @@ print (content)
 
 ######################################################################
 
+directory = r"C:\Users\matth\Downloads\TRMM_3B42RT"
+for root, dirs, filenames in os.walk(directory):
+    precip_subsetland2010 = []
+    for f in filenames:
+        if f.startswith("3B42RT_Daily.2010"):
+            log = open(os.path.join(root, f), 'r')
+            datapath2 = (("C:\\Users\\matth\\Downloads\\TRMM_3B42RT\\") + f)
+            f = Dataset(datapath2)
 
+            latbounds = [ -45 , -10 ]
+            lonbounds = [ 105, 150 ] 
+            lats = f.variables['lat'][:] 
+            lons = f.variables['lon'][:]
+
+            # latitude lower and upper index
+            latli = np.argmin( np.abs( lats - latbounds[0] ) )
+            latui = np.argmin( np.abs( lats - latbounds[1] ) ) 
+
+            # longitude lower and upper index
+            lonli = np.argmin( np.abs( lons - lonbounds[0] ) )
+            lonui = np.argmin( np.abs( lons - lonbounds[1] ) )
+
+            precip_subset = f.variables['precipitation'][ : , lonli:lonui , latli:latui ]
+            precip_subsetland2010.append(precip_subset)
+            precipsubsetland2010 = np.asarray(precip_subsetland2010)
+            print(precipsubsetland2010.shape)
+
+######################################################################
 
