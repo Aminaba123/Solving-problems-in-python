@@ -500,3 +500,60 @@ for key in dic.keys():
               
  ###############################################################             
               
+from pandas import parser
+
+try:
+  df=pd.read_csv('mydata.tsv',sep='\t',header=0, skiprows=[1,2,3])
+except (parser.CParserError) as detail:
+  print  detail
+	      
+ ###############################################################             
+
+	      df=pd.read_csv('my_data.tsv',sep='\t',header=0, skiprows=[1,2,3])
+###############################################################
+	      
+import csv
+file = 'your_filename.csv' # use your filename
+lines_set = set([100, 200]) # use your bad lines numbers here
+
+with open(file) as f_obj:
+    for line_number, row in enumerate(csv.reader(f_obj)):
+        if line_number > max(lines_set):
+            break
+        elif line_number in lines_set: # put your bad lines numbers here
+            print(line_number, row)	      
+	      
+###############################################################
+	      
+import csv
+
+
+def read_my_lines(file, lines_list, reader=csv.reader):
+    lines_set = set(lines_list)
+    with open(file) as f_obj:
+        for line_number, row in enumerate(csv.reader(f_obj)):
+            if line_number > max(lines_set):
+                break
+            elif line_number in lines_set:
+                print(line_number, row)
+
+
+if __name__ == '__main__':
+    read_my_lines(file='your_filename.csv', lines_list=[100, 200])	      
+	      
+	      
+	      
+###############################################################	      
+	      
+	      
+bad_lines = []
+with open(filename, 'r') as f:
+    n_col = len(f.readline().split(';'))
+    for i, line in enumerate(f):
+        if len(line.split(';')) != n_col:
+            print(i+2, line)
+            bad_lines.append(i+2)
+print(bad_lines)	      
+	      
+###############################################################	      
+	      
