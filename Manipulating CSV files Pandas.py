@@ -1,3 +1,7 @@
+#  Some useful key words words 
+#  skiprows 
+#
+
 # Divide date as day,month and year
 
 # Your delimiter should be a comma instead of a semicolon if it's a CSV.
@@ -19,6 +23,7 @@ for date_str in x:
     print(day, month, year)
 
 #################################################################################################    
+
 import numpy as np
 from sklearn import preprocessing, cross_validation, neighbors, utils
 import pandas as pd
