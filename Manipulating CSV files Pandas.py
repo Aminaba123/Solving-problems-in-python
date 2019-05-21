@@ -1,6 +1,6 @@
 #  Some useful key words words 
 #  skiprows 
-#
+#  https://machinelearningmastery.com/how-to-develop-autoregressive-forecasting-models-for-multi-step-air-pollution-time-series-forecasting/
 
 # Divide date as day,month and year
 
@@ -561,4 +561,59 @@ with open(filename, 'r') as f:
 print(bad_lines)	      
 	      
 ###############################################################	      
+	      
+import math
+import datetime
+import matplotlib
+import matplotlib.pyplot as plt
+import csv
+with open('MaxMin.txt','r') as f_input:
+csv_input = csv.reader(f_input, delimiter=' ',     skipinitialspace=True)
+        x = []
+        y = []
+        for cols in csv_input:
+            x = matplotlib.dates.date2num(cols[0])
+            y = [float(cols[1])]
+# naming the x axis 
+plt.xlabel('Real-Time') 
+# naming the y axis 
+plt.ylabel('Acceleration (m/s2)') 
+# giving a title to my graph 
+plt.title('Accelerometer reading graph!')
+# plotting the points 
+plt.plot(x, y)
+# beautify the x-labels
+plt.gcf().autofmt_xdate()
+# function to show the plot 
+plt.show()
+	      
+###############################################################
+
+	import math
+import datetime
+import matplotlib
+import matplotlib.pyplot as plt
+import csv
+with open('MaxMin.txt','r') as f_input:
+csv_input = csv.reader(f_input, delimiter=' ',     skipinitialspace=True)
+        x = []
+        y = []
+        for cols in csv_input:
+            x = matplotlib.dates.date2num(cols[0])
+            y = [float(cols[1])]
+# naming the x axis 
+plt.xlabel('Real-Time') 
+# naming the y axis 
+plt.ylabel('Acceleration (m/s2)') 
+# giving a title to my graph 
+plt.title('Accelerometer reading graph!')
+# plotting the points 
+plt.plot(x, y)
+# beautify the x-labels
+plt.gcf().autofmt_xdate()
+# function to show the plot 
+plt.show()      
+	      
+###############################################################	      
+	      
 	      
