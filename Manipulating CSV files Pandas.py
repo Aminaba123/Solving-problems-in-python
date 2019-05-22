@@ -589,7 +589,7 @@ plt.show()
 	      
 ###############################################################
 
-	import math
+import math
 import datetime
 import matplotlib
 import matplotlib.pyplot as plt
@@ -615,5 +615,27 @@ plt.gcf().autofmt_xdate()
 plt.show()      
 	      
 ###############################################################	      
+
+#  merge new column and save in csv format
 	      
+import pandas as pd
+df = pd.read_csv('filename.csv')
+new_column = pd.DataFrame({'new_header': ['new_value_1', 'new_value_2', 'new_value_3']})
+df = df.merge(new_column, left_index = True, right_index = True)
+df.to_csv('filename.csv')	      
+
+	      
+###############################################################
+	      
+import csv
+reader = csv.reader(open('filename.csv', 'rb'))
+writer = csv.writer(open('output.csv', 'w'))
+headers = reader.next()
+headers.append("Brand New Awesome Header")
+writer.write(headers)
+for row in reader:
+    row.append(new data for my new header)
+    writer.write(row)      
+	      
+###############################################################	      
 	      
