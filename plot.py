@@ -64,3 +64,87 @@ for i in range(10):
     time.sleep(1.0)
 
 ###################################################################################
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab 
+fig = plt.figure(figsize=(20,15))
+pylab.grid(True)
+
+a = f_mean[0:2184]*250
+b = yy[0:2184]*250
+
+pylab.plot(a[a>100]  , '-r', label= 'Predicted Values' )
+pylab.ylim([250,500])
+pylab.plot(b[b>100]  , '-b', label= 'Actual Values' )
+pylab.xlim([2160,2184])
+
+#pylab.plot(f_mean*250 , '-r', label='Predictive values (Testing from zero to i+24)')
+#plt.axhline(y=2.9*250, color='r', linestyle='-')
+#  to change the font of axis\n",
+
+pylab.title('Predicted Vs Actual values in GPR \n Enterprise\Duct1',fontsize=28)
+pylab.ylabel('Pressure drop (Pascal)',fontsize=28)
+pylab.xlabel('Samples \n Number of Predicted samples : 24 \n Number of observed samples : 2160',fontsize=28)
+pylab.legend(loc='bottom left',fontsize=22)
+
+#  to change the font of axis \n",
+
+pylab.tick_params(axis = 'both', which = 'major', labelsize = 22)
+pylab.tick_params(axis = 'both', which = 'minor', labelsize = 22)
+
+###################################################################################
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab 
+fig = plt.figure(figsize=(20,15))
+pylab.grid(True)
+
+#a = s
+#b = yy[0:2184]*250
+
+pylab.plot(s  , '-r', label= 'Accumulative Dust' )
+
+pylab.title('Accumulative Dust over time in Enterprise Dataset ',fontsize=28)
+pylab.ylabel('Accumulative Dust',fontsize=28)
+pylab.xlabel('Time',fontsize=28)
+pylab.legend(loc='bottom left',fontsize=22)
+
+#  to change the font of axis \n",
+
+pylab.tick_params(axis = 'both', which = 'major', labelsize = 22)
+pylab.tick_params(axis = 'both', which = 'minor', labelsize = 22)
+
+
+###################################################################################
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab 
+fig = plt.figure(figsize=(20,15))
+pylab.grid(True)
+
+#a = s
+#b = yy[0:2184]*250
+
+
+
+pylab.plot(T1_0   , '-r', label= 'Humidity' )
+
+pylab.title('Dati_SEGRETISSIMI Dataset ',fontsize=28)
+pylab.ylabel('Temperature ',fontsize=28)
+pylab.xlabel('Time',fontsize=28)
+pylab.legend(loc='bottom left',fontsize=22)
+
+#  to change the font of axis \n",
+
+pylab.tick_params(axis = 'both', which = 'major', labelsize = 22)
+pylab.tick_params(axis = 'both', which = 'minor', labelsize = 22)
+
+###################################################################################
+
+
+
+
+
