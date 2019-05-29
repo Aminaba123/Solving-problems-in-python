@@ -1,4 +1,5 @@
-###########
+#######################################################
+
 the equality operator ==, as in 'a' == 'a'.
 
 #  If the two single characters are the same, the expression returns True
@@ -28,5 +29,5 @@ def x_gen (x):
       
 ####################################################################### 
 
-
+# the difference between list and array for indexing 
 
