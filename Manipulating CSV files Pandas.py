@@ -643,6 +643,16 @@ for i in df:
     print df[str(i)]
 	      
 	      
+###############################################################	     
+import pandas as pd
+df = pd.read_csv('Test.csv', header=None, sep='\n')
+df = df[0].str.split(',', expand=True)      
+###############################################################
+
+df.to_csv("Test.tab",sep="\t",header=False,index=False)      
+	      
 ###############################################################	      
+	      
+	      
 	      
 	      
