@@ -469,4 +469,10 @@ for root, dirs, filenames in os.walk(directory):
             print(precipsubsetland2010.shape)
 
 ######################################################################
+#####  Path #####
+import os
+datapath = os.path.join("c:", "lifesat", "")
+
+######################################################################
+
 
