@@ -91,3 +91,22 @@ def load_images_from_folder(folder):
 	return images
 ######################################################################################
 
+import os
+import glob
+import numpy as np
+from PIL import Image
+
+path = r'D:\user\ASCII'
+outpath = 'D:\user\ASCII\TIFF'
+
+filenames = glob.glob(path + "/*.asc") #read all files in the path mentioned
+
+for x in filenames:
+    myarray = np.loadtxt(x, skiprows=9)
+    im = Image.fromarray(myarray)
+    im.save(outpath + '/*.tif')
+
+######################################################################################
+
+
+
