@@ -108,5 +108,59 @@ for x in filenames:
 
 ######################################################################################
 
+import cv2
+import os
 
+def load_images_from_folder(folder):
+    images = []
+    for filename in os.listdir(folder):
+        img = cv2.imread(os.path.join(folder,filename))
+        if img is not None:
+            images.append(img)
+    return images
+
+######################################################################################
+
+#!/usr/bin/python
+from PIL import Image
+import os, sys
+
+path = "/root/Desktop/python/images/"
+dirs = os.listdir( path )
+
+def resize():
+    for item in dirs:
+        if os.path.isfile(path+item):
+            im = Image.open(path+item)
+            f, e = os.path.splitext(path+item)
+            imResize = im.resize((200,200), Image.ANTIALIAS)
+            imResize.save(f + ' resized.jpg', 'JPEG', quality=90)
+
+resize()
+
+######################################################################################
+
+def load_images(path_to_directory):
+    """Load images and return them as a dict."""
+    image_dict = {}
+    for filename in os.listdir(path_to_directory):
+        if filename.endswith('.png'):
+            path = os.path.join(path_to_directory, filename)
+            key = filename[:-4]
+            image_dict[key] = pygame.image.load(path).convert()
+    return image_dict
+If you want to load all images from subdirectories as well, use os.walk:
+
+def load_images(path_to_directory):
+    """Load all images from subdirectories and return them as a dict."""
+    images = {}
+    for dirpath, dirnames, filenames in os.walk(path_to_directory):
+        for name in filenames:
+            if name.endswith('.png'):
+                key = name[:-4]
+                img = pygame.image.load(os.path.join(dirpath, name)).convert()
+                images[key] = img
+    return images
+
+######################################################################################
 
