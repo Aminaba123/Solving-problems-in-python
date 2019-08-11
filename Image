@@ -21,3 +21,73 @@ imgs = loadImages(path)
 for img in imgs:
     # you can show every image
     img.show()
+
+######################################################################################
+
+from os import listdir
+from os.path import isfile, join
+import numpy
+import cv2
+
+mypath='/path/to/folder'
+onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
+images = numpy.empty(len(onlyfiles), dtype=object)
+for n in range(0, len(onlyfiles)):
+  images[n] = cv2.imread( join(mypath,onlyfiles[n]) )
+
+######################################################################################
+
+import cv2
+from pathlib import Path
+
+path=Path(".")
+
+path=path.glob("*.jpg")
+
+images=[]`
+
+
+for imagepath in path.glob("*.jpg"):
+
+        img=cv2.imread(str(imagepath))
+        img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)                         
+        img=cv2.resize(img,(200,200))
+        images.append(img)
+print(images)
+
+######################################################################################
+
+import cv2
+import os
+
+def load_images_from_folder(folder):
+    images = []
+    for filename in os.listdir(folder):
+        img = cv2.imread(os.path.join(folder,filename))
+        if img is not None:
+            images.append(img)
+    return images
+
+######################################################################################
+
+import matplotlib.image as mpimg
+
+def load_images(folder):
+    images = []
+    for filename in os.listdir(folder):
+        img = mpimg.imread(os.path.join(folder, filename))
+        if img is not None:
+            images.append(img)
+    return images
+
+######################################################################################
+
+from PIL import Image
+def load_images_from_folder(folder):
+    images = []
+    for filename in os.listdir(folder):
+        img = Image.open(os.path.join(folder,filename))
+        images.append(img)
+	return images
+######################################################################################
+
