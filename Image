@@ -163,4 +163,34 @@ def load_images(path_to_directory):
     return images
 
 ######################################################################################
+##   Directory 
+######################################################################################
+
+from skimage import io, img_as_float
+import matplotlib.image as mpimg
+import os
+import pandas as pd
+
+def load_images(n):
+    images = []
+    data = []
+    for dirs in n:
+        for filename in os.listdir(dirs):
+            img = mpimg.imread(os.path.join(dirs, filename))
+            img = img_as_float(img)
+            if img is not None:
+                images.append(img)
+            if(np.mean(img) < 0.1):
+                print filename
+                data.append((dirs, filename))
+                df = pd.DataFrame(data, columns=['Folder', 'File'])
+    return df
+
+from glob import glob
+folder = glob("C:/Data/Testing/*/")
+df = load_images(folder)
+
+######################################################################################
+
+
 
