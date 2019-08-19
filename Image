@@ -192,5 +192,32 @@ df = load_images(folder)
 
 ######################################################################################
 
+import numpy as np
+import cv2
+
+# Two images of same size 
+image_in = cv2.imread('my_image.png')
+image_in2 = cv2.imread('my_image2.png')
+image_new = np.ones(image_in.shape[:2], dtype="uint8") * 255
+
+counter = 0
+counter2 = 0
+
+for i in range(image_in.shape[0]):
+    for j in range(image_in.shape[1]):
+        if image_in[i, j] < 255:
+            counter += 1
+            if image_in2[i, j] == 0:
+                image_new[i, j] = 0
+            else:
+                image_new[i, j] = 255
+                counter2 += 1
+
+######################################################################################
+
+
+
+
+
 
 
