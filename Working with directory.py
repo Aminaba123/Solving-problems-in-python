@@ -475,4 +475,23 @@ datapath = os.path.join("c:", "lifesat", "")
 
 ######################################################################
 
+def all_dir(imgdir):
+    """
+    Classify all images in one directory
+    Keyword arguements:
+    imgdir -- string containing relative path to images
+    """
+    output = []
+    maxbatch = 50
+    batch = []
+    for root, dirs, files in os.walk(imgdir):
+        for filename in files:
+            batch.append(imgdir + "/" + filename)
+            if len(batch) == maxbatch:
+                output.extend(class_imgs(batch))
+                batch = []
+    if len(batch) != 0:
+        output.extend(class_imgs(batch))
+    return output
 
+######################################################################
