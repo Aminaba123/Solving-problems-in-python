@@ -653,6 +653,19 @@ df.to_csv("Test.tab",sep="\t",header=False,index=False)
 	      
 ###############################################################	      
 	      
+with open('text.csv', 'r') as f:
+    obj = csv.reader(f)
+    X, Y, Z = [], [], []
+    for i,row in enumerate(obj):
+        if i>0:
+             xstring = row[0]
+             ystring = row[1]
+             zstring= row[2]
+##             print (xstring, ystring, zstring)
+
+zdata = float(zstring)
+xdata = float(ystring)
+ydata = float(xstring)
+ax.scatter3D(xdata, ydata, zdata);	      
 	      
-	      
-	      
+###############################################################		      
